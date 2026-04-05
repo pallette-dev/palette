@@ -1,0 +1,35 @@
+---
+title: Pallette docs
+description:
+  Use json-render definitions to generate a component catalog instead of maintaining Storybook.
+template: splash
+hero:
+  tagline:
+    A component catalog driven by your json-render schemas—inspect controls, preview, and props
+    in one place.
+  actions:
+    - text: Why Pallette?
+      link: /introduction/
+      icon: open-book
+    - text: Getting started
+      link: /getting-started/
+      icon: rocket
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## What’s here
+
+<CardGrid stagger>
+  <Card title="Introduction" icon="information">
+    How Pallette replaces ad-hoc Storybook stories with **catalogs generated from** your **Zod /
+    json-render** component definitions.
+  </Card>
+  <Card title="Getting started" icon="rocket">
+    Minimal **React** and **Svelte** examples: `defineCatalog`, `defineRegistry`, and the
+    Pallette wrapper component.
+  </Card>
+  <Card title="Live demos" icon="external">
+    Run the **Vite demo apps** locally for the full interactive catalog—see **[Live demos](/demos/)**.
+  </Card>
+</CardGrid>

@@ -1,0 +1,40 @@
+{
+  "name": "@pallette/plugin-svelte",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "author": "Eugene Michasiw",
+  "type": "module",
+  "svelte": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "svelte": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "check-types": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "dependencies": {
+    "@pallette/catalog": "workspace:*",
+    "@pallette/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "@json-render/core": "^0.16.0",
+    "@json-render/svelte": "^0.16.0",
+    "svelte": "^5.0.0"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@json-render/core": "^0.16.0",
+    "@json-render/svelte": "^0.16.0",
+    "@sveltejs/vite-plugin-svelte": "^6.2.4",
+    "eslint": "^9.39.1",
+    "svelte": "^5.0.0",
+    "svelte-check": "^4.0.0",
+    "typescript": "5.9.2"
+  }
+}

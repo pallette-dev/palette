@@ -1,0 +1,16 @@
+{
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "allowArbitraryExtensions": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.svelte",
+    "../pallette-catalog/src/css-modules.d.ts"
+  ],
+  "exclude": ["node_modules"]
+}

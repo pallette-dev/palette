@@ -1,0 +1,30 @@
+{
+  "name": "docs",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "author": "Eugene Michasiw",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev --port 3001",
+    "start": "ASTRO_TELEMETRY_DISABLED=1 astro dev --port 3001",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "check-types": "ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "lint": "eslint . --max-warnings 0",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.38.3",
+    "astro": "^6.0.1",
+    "sharp": "^0.34.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.8",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "typescript": "5.9.2"
+  }
+}

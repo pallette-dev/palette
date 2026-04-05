@@ -1,0 +1,41 @@
+{
+  "name": "@pallette/plugin-react",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "author": "Eugene Michasiw",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@pallette/catalog": "workspace:*",
+    "@pallette/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "@json-render/core": "^0.16.0",
+    "@json-render/react": "^0.16.0",
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@json-render/core": "^0.16.0",
+    "@json-render/react": "^0.16.0",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "eslint": "^9.39.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "typescript": "5.9.2"
+  }
+}
