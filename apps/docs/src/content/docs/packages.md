@@ -3,7 +3,7 @@ title: Packages
 description: Workspace packages that make up Pallette.
 ---
 
-**Publishable on npm:** `@pallette/core`, `@pallette/catalog`, `@pallette/plugin-react`, `@pallette/plugin-svelte`, and `@pallette/plugin-vue` (scoped public). **`@pallette/eslint-config`** and **`@pallette/typescript-config`** stay **workspace-only** (not intended for npm). The **Vite demos** depend on **`@pallette/*` via semver** (not `workspace:*`) so installs work in sandboxes and standalone checkouts; **pnpm** in this repo still links workspace copies when versions match. Apps under **`apps/*`** (including **docs** and those demos) are **private**.
+**Publishable on npm:** `@pallette/core`, `@pallette/catalog`, `@pallette/plugin-react`, `@pallette/plugin-svelte`, and `@pallette/plugin-vue` (scoped public). **`@pallette/eslint-config`** and **`@pallette/typescript-config`** stay **workspace-only** (not intended for npm). The **Vite demos** declare **semver** (e.g. **`^0.0.1`**) for `@pallette/*` so **CodeSandbox** and other installs from **npm** work without workspace metadata; the **repo root** **`package.json`** uses **`pnpm.overrides`** so those packages always resolve to **workspace** links when you **`pnpm install`** from this monorepo (`.npmrc` **`prefer-workspace-packages`** alone does not replace entries already in **`pnpm-lock.yaml`**). Apps under **`apps/*`** (including **docs** and those demos) are **private**.
 
 ## `@pallette/core`
 
@@ -14,6 +14,8 @@ Shared utilities: **Zod introspection** for the inspector, helpers like **`exten
 ## `@pallette/catalog`
 
 The **catalog shell**: React UI (sidebar, canvas, inspector tabs, CSS modules), **`PalletteCatalog`** component, and the **`pallette-catalog`** custom element via **`registerPalletteCatalog`**. Framework plugins wrap this so you do not have to touch the custom element directly.
+
+**Subpath `@pallette/catalog/ce`:** prebuilt **`dist/ce.js`** (from **`pnpm build`** here) that inlines **React** for **`registerPalletteCatalog`**; **`@pallette/plugin-svelte`** uses it. In a Svelte + Vite app, alias this subpath to **`dist/ce.js`** (see [Getting started](/getting-started/)).
 
 **Depends on:** `@pallette/core`.
 

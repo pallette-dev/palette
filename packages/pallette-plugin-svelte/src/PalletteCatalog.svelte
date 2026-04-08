@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { registerPalletteCatalog } from "@pallette/catalog";
+  import "@pallette/catalog/ce.css";
+  import { registerPalletteCatalog } from "@pallette/catalog/ce";
   import type { PalletteCatalogComponents, PallettePreview } from "@pallette/core";
   import { createSveltePreview } from "./createSveltePreview";
   import { onMount } from "svelte";

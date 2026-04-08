@@ -22,5 +22,14 @@
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
+  },
+  "pnpm": {
+    "overrides": {
+      "@pallette/catalog": "workspace:*",
+      "@pallette/core": "workspace:*",
+      "@pallette/plugin-react": "workspace:*",
+      "@pallette/plugin-svelte": "workspace:*",
+      "@pallette/plugin-vue": "workspace:*"
+    }
   }
 }

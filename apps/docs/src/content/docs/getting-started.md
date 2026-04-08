@@ -116,6 +116,8 @@ export const { registry } = defineRegistry(catalog, {
 />
 ```
 
+**Svelte + Vite:** `@pallette/plugin-svelte` loads **`@pallette/catalog/ce`**, a bundle that **inlines React** for `<pallette-catalog>`—you do **not** add React or `@vitejs/plugin-react` to the app. Run **`pnpm build --filter @pallette/catalog`** so **`dist/ce.js`** exists, then set Vite **`resolve.alias`** for **`@pallette/catalog/ce`** and **`@pallette/catalog/ce.css`** to those files (see **`apps/pallette-demo-svelte/vite.config.ts`**). Without the alias, Vite may resolve catalog **`src/*.tsx`** and fail without React in the app.
+
 Reference implementation: **`apps/pallette-demo-svelte`** (`pnpm --filter pallette-demo-svelte dev`, default port **3003**).
 
 ## Customizing examples

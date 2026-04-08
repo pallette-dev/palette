@@ -13,13 +13,25 @@
       "import": "./src/index.ts",
       "default": "./src/index.ts"
     },
+    "./ce": {
+      "types": "./src/ce.d.ts",
+      "import": "./dist/ce.js",
+      "default": "./dist/ce.js"
+    },
+    "./ce.css": "./dist/ce.css",
     "./register": {
       "types": "./src/register.ts",
       "import": "./src/register.ts",
       "default": "./src/register.ts"
     }
   },
+  "files": [
+    "dist",
+    "src",
+    "LICENSE"
+  ],
   "scripts": {
+    "build": "vite build",
     "lint": "eslint . --max-warnings 0",
     "check-types": "tsc --noEmit"
   },
@@ -30,16 +42,26 @@
     "react": "^18 || ^19",
     "react-dom": "^18 || ^19"
   },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@json-render/core": "^0.16.0",
     "@pallette/eslint-config": "workspace:*",
     "@pallette/typescript-config": "workspace:*",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
+    "@vitejs/plugin-react": "^5.0.4",
     "eslint": "^9.39.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "typescript": "5.9.2",
+    "vite": "^7.0.0",
     "zod": "^4.0.0"
   }
 }
