@@ -16,8 +16,8 @@
     "@json-render/core": "^0.16.0",
     "@json-render/react": "^0.16.0",
     "@json-render/shadcn": "^0.16.0",
-    "@pallette/catalog": "^0.0.1",
-    "@pallette/plugin-react": "^0.0.1",
+    "@pallette/catalog": "^0.0.2",
+    "@pallette/plugin-react": "^0.0.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "zod": "^4.0.0"
