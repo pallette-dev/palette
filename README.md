@@ -18,8 +18,8 @@ This Turborepo includes the following packages/apps:
 
 - `docs`: [Starlight](https://starlight.astro.build/) / [Astro](https://astro.build/) documentation site
 - `pallette-demo-react`, `pallette-demo-svelte`: Vite demos for the catalog
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `@pallette/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `@pallette/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
@@ -30,6 +30,7 @@ This Turborepo has some additional tools already setup for you:
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
+- [Changesets](https://github.com/changesets/changesets) for versioning workspace packages (`pnpm changeset`, `pnpm version-packages`, `pnpm release`). On pushes to **`main`** or **`master`**, [`.github/workflows/release.yml`](.github/workflows/release.yml) opens the version PR or runs `pnpm release` when ready; add an **`NPM_TOKEN`** repository secret for npm publish.
 
 ### Build
 

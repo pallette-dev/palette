@@ -21,8 +21,8 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.8",
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@pallette/eslint-config": "workspace:*",
+    "@pallette/typescript-config": "workspace:*",
     "eslint": "^9.39.1",
     "globals": "^16.5.0",
     "typescript": "5.9.2"

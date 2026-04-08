@@ -1,9 +1,11 @@
 {
   "name": "@pallette/plugin-svelte",
   "version": "0.0.0",
-  "private": true,
   "license": "MIT",
   "author": "Eugene Michasiw",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "svelte": "./src/index.ts",
   "exports": {
@@ -27,8 +29,8 @@
     "svelte": "^5.0.0"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@pallette/eslint-config": "workspace:*",
+    "@pallette/typescript-config": "workspace:*",
     "@json-render/core": "^0.16.0",
     "@json-render/svelte": "^0.16.0",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",

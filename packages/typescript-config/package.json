@@ -1,10 +1,7 @@
 {
-  "name": "@repo/typescript-config",
+  "name": "@pallette/typescript-config",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
-  "author": "Eugene Michasiw",
-  "publishConfig": {
-    "access": "public"
-  }
+  "author": "Eugene Michasiw"
 }

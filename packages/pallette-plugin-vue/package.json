@@ -1,9 +1,11 @@
 {
   "name": "@pallette/plugin-vue",
   "version": "0.0.0",
-  "private": true,
   "license": "MIT",
   "author": "Eugene Michasiw",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "exports": {
     ".": {
@@ -20,8 +22,8 @@
     "@pallette/core": "workspace:*"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@pallette/eslint-config": "workspace:*",
+    "@pallette/typescript-config": "workspace:*",
     "eslint": "^9.39.1",
     "typescript": "5.9.2"
   }

@@ -3,7 +3,7 @@ title: Packages
 description: Workspace packages that make up Pallette.
 ---
 
-All packages are published as **private workspace** modules (`@pallette/*`) inside this monorepo.
+**Publishable on npm:** `@pallette/core`, `@pallette/catalog`, `@pallette/plugin-react`, `@pallette/plugin-svelte`, and `@pallette/plugin-vue` (scoped public). **`@pallette/eslint-config`** and **`@pallette/typescript-config`** stay **workspace-only** (not intended for npm). Demo and docs apps under `apps/*` are also private.
 
 ## `@pallette/core`
 

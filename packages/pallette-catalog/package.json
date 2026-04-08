@@ -1,9 +1,11 @@
 {
   "name": "@pallette/catalog",
   "version": "0.0.0",
-  "private": true,
   "license": "MIT",
   "author": "Eugene Michasiw",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "exports": {
     ".": {
@@ -30,8 +32,8 @@
   },
   "devDependencies": {
     "@json-render/core": "^0.16.0",
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@pallette/eslint-config": "workspace:*",
+    "@pallette/typescript-config": "workspace:*",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "eslint": "^9.39.1",

@@ -1,4 +1,4 @@
-import { config } from '@repo/eslint-config/base';
+import { config } from '@pallette/eslint-config/base';
 import globals from 'globals';
 
 /** @type {import("eslint").Linter.Config[]} */
