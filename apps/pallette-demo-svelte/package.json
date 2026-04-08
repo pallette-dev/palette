@@ -22,8 +22,7 @@
     "zod": "^4.0.0"
   },
   "devDependencies": {
-    "@pallette/eslint-config": "workspace:*",
-    "@pallette/typescript-config": "workspace:*",
+    "@eslint/js": "^9.39.1",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
     "@tailwindcss/postcss": "^4",
     "eslint": "^9.39.1",

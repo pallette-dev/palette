@@ -152,12 +152,9 @@ importers:
         specifier: ^4.0.0
         version: 4.3.6
     devDependencies:
-      '@pallette/eslint-config':
-        specifier: workspace:*
-        version: link:../../packages/eslint-config
-      '@pallette/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
+      '@eslint/js':
+        specifier: ^9.39.1
+        version: 9.39.1
       '@sveltejs/vite-plugin-svelte':
         specifier: ^6.2.4
         version: 6.2.4(svelte@5.55.2)(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3))
