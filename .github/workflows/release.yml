@@ -4,6 +4,12 @@
 #
 # Requirements:
 # - Repo secret NPM_TOKEN: npm automation token with publish access to your scope(s).
+# - GitHub must allow this workflow to open PRs (version-packages PR):
+#   Settings → Actions → General → Workflow permissions: “Read and write”.
+#   Enable “Allow GitHub Actions to create and approve pull requests”.
+#   https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository
+#   If your org forbids that, add repo secret CHANGESETS_GITHUB_TOKEN (fine-grained or classic PAT
+#   with contents + pull-requests write on this repo) — see env on the changesets step below.
 # - Publishable packages use publishConfig.access public; eslint-config and typescript-config stay private.
 # - Keep .changeset/config.json "baseBranch" aligned with your default branch (currently main).
 #
@@ -22,6 +28,11 @@ on:
       - master
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+# Default token permissions for jobs that don’t set their own (included for clarity).
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   release:
@@ -61,5 +72,6 @@ jobs:
           commit: "chore: version packages"
           title: "chore: version packages"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # PAT secret optional when repo/org blocks GITHUB_TOKEN from creating PRs; see header comment.
+          GITHUB_TOKEN: ${{ secrets.CHANGESETS_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
