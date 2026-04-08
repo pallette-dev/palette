@@ -4,6 +4,8 @@
 #
 # Requirements:
 # - Repo secret NPM_TOKEN: npm automation token with publish access to your scope(s).
+#   setup-node + registry-url requires NODE_AUTH_TOKEN (set below to this secret) or npm
+#   may publish unauthenticated and return misleading E404 for @scope packages.
 # - GitHub must allow this workflow to open PRs (version-packages PR):
 #   Settings → Actions → General → Workflow permissions: “Read and write”.
 #   Enable “Allow GitHub Actions to create and approve pull requests”.
@@ -41,6 +43,9 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+    env:
+      # Required by actions/setup-node when registry-url is set; without it auth may be missing for npm/pnpm publish.
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     steps:
       - name: Checkout repository
@@ -72,5 +77,5 @@ jobs:
           commit: "chore: version packages"
           title: "chore: version packages"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CHANGESETS_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
