@@ -72,6 +72,5 @@ jobs:
           commit: "chore: version packages"
           title: "chore: version packages"
         env:
-          # PAT secret optional when repo/org blocks GITHUB_TOKEN from creating PRs; see header comment.
-          GITHUB_TOKEN: ${{ secrets.CHANGESETS_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
