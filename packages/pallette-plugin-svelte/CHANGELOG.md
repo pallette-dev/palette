@@ -1,5 +1,14 @@
 # @pallette/plugin-svelte
 
+## 0.0.2
+
+### Patch Changes
+
+- 974f0fb: fix svelte builds
+- Updated dependencies [974f0fb]
+  - @pallette/catalog@0.0.2
+  - @pallette/core@0.0.2
+
 ## 0.0.1
 
 ### Patch Changes
