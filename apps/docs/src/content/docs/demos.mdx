@@ -1,0 +1,47 @@
+---
+title: Live demos
+description: Try the React and Svelte catalog demos in CodeSandbox or run them locally.
+---
+
+import CodeSandboxEmbed from '../../components/CodeSandboxEmbed.astro';
+
+The interactive catalog lives in the **Vite demo apps** in this repo. **Embedded sandboxes** load CodeSandbox’s GitHub import for [pallette-dev/pallette](https://github.com/pallette-dev/pallette) (`main` by default). Set `PUBLIC_DEMO_GITHUB_REPO` / `PUBLIC_DEMO_GITHUB_BRANCH` when building docs if you need a fork or branch—see `apps/docs/README.md`. You can also run the apps locally below.
+
+## React catalog (embed)
+
+<CodeSandboxEmbed title="Pallette React demo (Vite + json-render shadcn)" app="pallette-demo-react" />
+
+## Svelte catalog (embed)
+
+<CodeSandboxEmbed title="Pallette Svelte demo (Vite + json-render shadcn-svelte)" app="pallette-demo-svelte" />
+
+## Run locally
+
+### React demo
+
+From the repository root:
+
+```bash
+pnpm --filter pallette-demo-react dev
+```
+
+Then open **http://localhost:3002** (see `apps/pallette-demo-react/vite.config.ts` if the port changes).
+
+### Svelte demo
+
+```bash
+pnpm --filter pallette-demo-svelte dev
+```
+
+Then open **http://localhost:3003**.
+
+## Deployed builds
+
+You can also build and host each demo’s `dist/` output (static), or publish previews from CI. Point embeds or links here when you have public URLs.
+
+## Source
+
+- React: `apps/pallette-demo-react/src/main.tsx`
+- Svelte: `apps/pallette-demo-svelte/src/App.svelte`
+
+More detail: **[Getting started](/getting-started/)**.

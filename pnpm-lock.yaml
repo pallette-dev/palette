@@ -64,11 +64,11 @@ importers:
         specifier: ^0.16.0
         version: 0.16.0(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tailwindcss@4.2.2)(zod@4.3.6)
       '@pallette/catalog':
-        specifier: workspace:*
-        version: link:../../packages/pallette-catalog
+        specifier: ^0.0.1
+        version: 0.0.1(@json-render/core@0.16.0(zod@4.3.6))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(zod@4.3.6)
       '@pallette/plugin-react':
-        specifier: workspace:*
-        version: link:../../packages/pallette-plugin-react
+        specifier: ^0.0.1
+        version: 0.0.1(@json-render/core@0.16.0(zod@4.3.6))(@json-render/react@0.16.0(react@19.2.0)(zod@4.3.6))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(zod@4.3.6)
       react:
         specifier: ^19.2.0
         version: 19.2.0
@@ -79,12 +79,9 @@ importers:
         specifier: ^4.0.0
         version: 4.3.6
     devDependencies:
-      '@pallette/eslint-config':
-        specifier: workspace:*
-        version: link:../../packages/eslint-config
-      '@pallette/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
+      '@eslint/js':
+        specifier: ^9.39.1
+        version: 9.39.1
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.2.2
@@ -100,6 +97,18 @@ importers:
       eslint:
         specifier: ^9.39.1
         version: 9.39.1(jiti@2.6.1)
+      eslint-config-prettier:
+        specifier: ^10.1.1
+        version: 10.1.1(eslint@9.39.1(jiti@2.6.1))
+      eslint-plugin-react:
+        specifier: ^7.37.5
+        version: 7.37.5(eslint@9.39.1(jiti@2.6.1))
+      eslint-plugin-react-hooks:
+        specifier: ^5.2.0
+        version: 5.2.0(eslint@9.39.1(jiti@2.6.1))
+      globals:
+        specifier: ^16.5.0
+        version: 16.5.0
       postcss:
         specifier: ^8.5.8
         version: 8.5.8
@@ -112,6 +121,9 @@ importers:
       typescript:
         specifier: 5.9.2
         version: 5.9.2
+      typescript-eslint:
+        specifier: ^8.50.0
+        version: 8.50.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2)
       vite:
         specifier: ^7.0.0
         version: 7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -128,11 +140,11 @@ importers:
         specifier: ^0.16.0
         version: 0.16.0(svelte@5.55.2)(zod@4.3.6)
       '@pallette/catalog':
-        specifier: workspace:*
-        version: link:../../packages/pallette-catalog
+        specifier: ^0.0.1
+        version: 0.0.1(@json-render/core@0.16.0(zod@4.3.6))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(zod@4.3.6)
       '@pallette/plugin-svelte':
-        specifier: workspace:*
-        version: link:../../packages/pallette-plugin-svelte
+        specifier: ^0.0.1
+        version: 0.0.1(@json-render/core@0.16.0(zod@4.3.6))(@json-render/svelte@0.16.0(svelte@5.55.2)(zod@4.3.6))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(svelte@5.55.2)(zod@4.3.6)
       svelte:
         specifier: ^5.0.0
         version: 5.55.2
@@ -155,6 +167,15 @@ importers:
       eslint:
         specifier: ^9.39.1
         version: 9.39.1(jiti@2.6.1)
+      eslint-config-prettier:
+        specifier: ^10.1.1
+        version: 10.1.1(eslint@9.39.1(jiti@2.6.1))
+      eslint-plugin-svelte:
+        specifier: ^3.17.0
+        version: 3.17.0(eslint@9.39.1(jiti@2.6.1))(svelte@5.55.2)
+      globals:
+        specifier: ^16.5.0
+        version: 16.5.0
       postcss:
         specifier: ^8.5.8
         version: 8.5.8
@@ -170,6 +191,9 @@ importers:
       typescript:
         specifier: 5.9.2
         version: 5.9.2
+      typescript-eslint:
+        specifier: ^8.50.0
+        version: 8.50.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.2)
       vite:
         specifier: ^7.0.0
         version: 7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)
@@ -1109,6 +1133,33 @@ packages:
     resolution: {integrity: sha512-8eOCmB8lnpyvwz+HrcTXLuBxhj7UseAFh6KGEXRe8UCcAfVQih+qPy/4akJRezViI+ONijz9oi7HpMkw9rdtBg==}
     cpu: [x64]
     os: [win32]
+
+  '@pallette/catalog@0.0.1':
+    resolution: {integrity: sha512-4wdlHhrmtvRmISdPOqHUZUEk4kA4O47QwmX3rRPfkPGtcDxeKC5c7p1NRD/l/CU0A5pzWuc8VBNMo8cBnKeNDA==}
+    peerDependencies:
+      react: ^18 || ^19
+      react-dom: ^18 || ^19
+
+  '@pallette/core@0.0.1':
+    resolution: {integrity: sha512-4cGhksyf3F4bIkihBR/7m5J9EYx3plihuzX0oi09PNmFJeg9G7HriqD7o6rKkmJBQD8kMdYSmhZwNI9xudsj0Q==}
+    peerDependencies:
+      '@json-render/core': ^0.16.0
+      zod: ^3.23.0 || ^4.0.0
+
+  '@pallette/plugin-react@0.0.1':
+    resolution: {integrity: sha512-6EsPGjCaj9qQlD3+1UxP8SlBh7XKlUVmvVGmecmmsAiBS2LpFDnM/pfwC40BdSDwBcGCU7xw1T6COySIKfJ43g==}
+    peerDependencies:
+      '@json-render/core': ^0.16.0
+      '@json-render/react': ^0.16.0
+      react: ^18 || ^19
+      react-dom: ^18 || ^19
+
+  '@pallette/plugin-svelte@0.0.1':
+    resolution: {integrity: sha512-+YAcPiwe8CpiFltLu5klVdUvqCuP5fzROwR1IcdbPuT2JGW0bKZjVQObHaSMaixdvS7YaEAOTZPkZONNGE7EOw==}
+    peerDependencies:
+      '@json-render/core': ^0.16.0
+      '@json-render/svelte': ^0.16.0
+      svelte: ^5.0.0
 
   '@radix-ui/number@1.1.1':
     resolution: {integrity: sha512-MkKCwxlXTgz6CFoJx3pCwn07GKp36+aZyu/u2Ln2VrA5DcdyCZkASEDBTd8x5whTQQL5CiYf4prXKLcgQdv29g==}
@@ -2833,6 +2884,16 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
+  eslint-plugin-svelte@3.17.0:
+    resolution: {integrity: sha512-sF6wgd5FLS2P8CCaOy2HdYYYEcZ6TwL251dLHUkNmtLnWECk1Dwc+j6VeulmmnFxr7Xs0WNtjweOA+bJ0PnaFw==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    peerDependencies:
+      eslint: ^8.57.1 || ^9.0.0 || ^10.0.0
+      svelte: ^3.37.0 || ^4.0.0 || ^5.0.0
+    peerDependenciesMeta:
+      svelte:
+        optional: true
+
   eslint-plugin-turbo@2.7.1:
     resolution: {integrity: sha512-ZC7dTOdw6tGuvx1CeC1WQ0pMkgT/Jmj69QW93d63nysiLbbKRLiDKKA9s/TvwJHq8Uvbou2+hnU8if1L0jHsVQ==}
     peerDependencies:
@@ -3443,6 +3504,9 @@ packages:
     resolution: {integrity: sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==}
     engines: {node: '>= 8'}
 
+  known-css-properties@0.37.0:
+    resolution: {integrity: sha512-JCDrsP4Z1Sb9JwG0aJ8Eo2r7k4Ou5MwmThS/6lcIe1ICyb7UBJKGRIUUdqc2ASdE/42lgz6zFUnzAIhtXnBVrQ==}
+
   levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
@@ -3516,6 +3580,10 @@ packages:
   lightningcss@1.32.0:
     resolution: {integrity: sha512-NXYBzinNrblfraPGyrbPoD19C1h9lfI/1mzgWYvXUTe414Gz/X1FD2XBZSZM7rRTrMA8JL3OtAaGifrIKhQ5yQ==}
     engines: {node: '>= 12.0.0'}
+
+  lilconfig@2.1.0:
+    resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==}
+    engines: {node: '>=10'}
 
   locate-character@3.0.0:
     resolution: {integrity: sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA==}
@@ -3959,14 +4027,42 @@ packages:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
     engines: {node: '>= 0.4'}
 
+  postcss-load-config@3.1.4:
+    resolution: {integrity: sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg==}
+    engines: {node: '>= 10'}
+    peerDependencies:
+      postcss: '>=8.0.9'
+      ts-node: '>=9.0.0'
+    peerDependenciesMeta:
+      postcss:
+        optional: true
+      ts-node:
+        optional: true
+
   postcss-nested@6.2.0:
     resolution: {integrity: sha512-HQbt28KulC5AJzG+cZtj9kvKB93CFCdLvog1WFLf1D+xmMvPGlBstkpTEZfK5+AN9hfJocyBFCNiqyS48bpgzQ==}
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.2.14
 
+  postcss-safe-parser@7.0.1:
+    resolution: {integrity: sha512-0AioNCJZ2DPYz5ABT6bddIqlhgwhpHZ/l65YAYo0BCIn0xiDpsnTHz0gnoTGk0OXZW0JRs+cDwL8u/teRdz+8A==}
+    engines: {node: '>=18.0'}
+    peerDependencies:
+      postcss: ^8.4.31
+
+  postcss-scss@4.0.9:
+    resolution: {integrity: sha512-AjKOeiwAitL/MXxQW2DliT28EKukvvbEWx3LBmJIRN8KfBGZbRTxNYW0kSqi1COiTZ57nZ9NW06S6ux//N1c9A==}
+    engines: {node: '>=12.0'}
+    peerDependencies:
+      postcss: ^8.4.29
+
   postcss-selector-parser@6.1.2:
     resolution: {integrity: sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==}
+    engines: {node: '>=4'}
+
+  postcss-selector-parser@7.1.1:
+    resolution: {integrity: sha512-orRsuYpJVw8LdAwqqLykBj9ecS5/cRHlI5+nvTo8LcCKmzDmqVORXtOIYEEQuL9D4BxtA1lm5isAqzQZCoQ6Eg==}
     engines: {node: '>=4'}
 
   postcss@8.5.8:
@@ -4249,11 +4345,6 @@ packages:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
 
-  semver@7.7.3:
-    resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   semver@7.7.4:
     resolution: {integrity: sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==}
     engines: {node: '>=10'}
@@ -4409,6 +4500,15 @@ packages:
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: '>=5.0.0'
+
+  svelte-eslint-parser@1.6.0:
+    resolution: {integrity: sha512-qoB1ehychT6OxEtQAqc/guSqLS20SlA53Uijl7x375s8nlUT0lb9ol/gzraEEatQwsyPTJo87s2CmKL9Xab+Uw==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0, pnpm: 10.30.3}
+    peerDependencies:
+      svelte: ^3.37.0 || ^4.0.0 || ^5.0.0
+    peerDependenciesMeta:
+      svelte:
+        optional: true
 
   svelte-toolbelt@0.10.6:
     resolution: {integrity: sha512-YWuX+RE+CnWYx09yseAe4ZVMM7e7GRFZM6OYWpBKOb++s+SQ8RBIMMe+Bs/CznBMc0QPLjr+vDBxTAkozXsFXQ==}
@@ -4915,6 +5015,10 @@ packages:
   yaml-language-server@1.20.0:
     resolution: {integrity: sha512-qhjK/bzSRZ6HtTvgeFvjNPJGWdZ0+x5NREV/9XZWFjIGezew2b4r5JPy66IfOhd5OA7KeFwk1JfmEbnTvev0cA==}
     hasBin: true
+
+  yaml@1.10.3:
+    resolution: {integrity: sha512-vIYeF1u3CjlhAFekPPAk2h/Kv4T3mAkMox5OymRiJQB0spDP10LHvt+K7G9Ny6NuuMAb25/6n1qyUjAcGNf/AA==}
+    engines: {node: '>= 6'}
 
   yaml@2.7.1:
     resolution: {integrity: sha512-10ULxpnOCQXxJvBgxsn9ptjq6uviG/htZKk9veJGhlqn3w/DxQ631zFF+nlQXLwmImeS5amR2dl2U8sg6U9jsQ==}
@@ -5858,6 +5962,43 @@ snapshots:
 
   '@pagefind/windows-x64@1.5.0':
     optional: true
+
+  '@pallette/catalog@0.0.1(@json-render/core@0.16.0(zod@4.3.6))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(zod@4.3.6)':
+    dependencies:
+      '@pallette/core': 0.0.1(@json-render/core@0.16.0(zod@4.3.6))(zod@4.3.6)
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
+    transitivePeerDependencies:
+      - '@json-render/core'
+      - zod
+
+  '@pallette/core@0.0.1(@json-render/core@0.16.0(zod@4.3.6))(zod@4.3.6)':
+    dependencies:
+      '@json-render/core': 0.16.0(zod@4.3.6)
+      zod: 4.3.6
+
+  '@pallette/plugin-react@0.0.1(@json-render/core@0.16.0(zod@4.3.6))(@json-render/react@0.16.0(react@19.2.0)(zod@4.3.6))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(zod@4.3.6)':
+    dependencies:
+      '@json-render/core': 0.16.0(zod@4.3.6)
+      '@json-render/react': 0.16.0(react@19.2.0)(zod@4.3.6)
+      '@pallette/catalog': 0.0.1(@json-render/core@0.16.0(zod@4.3.6))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(zod@4.3.6)
+      '@pallette/core': 0.0.1(@json-render/core@0.16.0(zod@4.3.6))(zod@4.3.6)
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
+    transitivePeerDependencies:
+      - zod
+
+  '@pallette/plugin-svelte@0.0.1(@json-render/core@0.16.0(zod@4.3.6))(@json-render/svelte@0.16.0(svelte@5.55.2)(zod@4.3.6))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(svelte@5.55.2)(zod@4.3.6)':
+    dependencies:
+      '@json-render/core': 0.16.0(zod@4.3.6)
+      '@json-render/svelte': 0.16.0(svelte@5.55.2)(zod@4.3.6)
+      '@pallette/catalog': 0.0.1(@json-render/core@0.16.0(zod@4.3.6))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(zod@4.3.6)
+      '@pallette/core': 0.0.1(@json-render/core@0.16.0(zod@4.3.6))(zod@4.3.6)
+      svelte: 5.55.2
+    transitivePeerDependencies:
+      - react
+      - react-dom
+      - zod
 
   '@radix-ui/number@1.1.1': {}
 
@@ -7021,7 +7162,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 8.50.0
       debug: 4.4.3
       minimatch: 9.0.5
-      semver: 7.7.3
+      semver: 7.7.4
       tinyglobby: 0.2.15
       ts-api-utils: 2.1.0(typescript@5.9.2)
       typescript: 5.9.2
@@ -7839,6 +7980,24 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
+  eslint-plugin-svelte@3.17.0(eslint@9.39.1(jiti@2.6.1))(svelte@5.55.2):
+    dependencies:
+      '@eslint-community/eslint-utils': 4.9.0(eslint@9.39.1(jiti@2.6.1))
+      '@jridgewell/sourcemap-codec': 1.5.5
+      eslint: 9.39.1(jiti@2.6.1)
+      esutils: 2.0.3
+      globals: 16.5.0
+      known-css-properties: 0.37.0
+      postcss: 8.5.8
+      postcss-load-config: 3.1.4(postcss@8.5.8)
+      postcss-safe-parser: 7.0.1(postcss@8.5.8)
+      semver: 7.7.4
+      svelte-eslint-parser: 1.6.0(svelte@5.55.2)
+    optionalDependencies:
+      svelte: 5.55.2
+    transitivePeerDependencies:
+      - ts-node
+
   eslint-plugin-turbo@2.7.1(eslint@9.39.1(jiti@2.6.1))(turbo@2.9.3):
     dependencies:
       dotenv: 16.0.3
@@ -8602,6 +8761,8 @@ snapshots:
 
   klona@2.0.6: {}
 
+  known-css-properties@0.37.0: {}
+
   levn@0.4.1:
     dependencies:
       prelude-ls: 1.2.1
@@ -8655,6 +8816,8 @@ snapshots:
       lightningcss-linux-x64-musl: 1.32.0
       lightningcss-win32-arm64-msvc: 1.32.0
       lightningcss-win32-x64-msvc: 1.32.0
+
+  lilconfig@2.1.0: {}
 
   locate-character@3.0.0: {}
 
@@ -9381,12 +9544,32 @@ snapshots:
 
   possible-typed-array-names@1.1.0: {}
 
+  postcss-load-config@3.1.4(postcss@8.5.8):
+    dependencies:
+      lilconfig: 2.1.0
+      yaml: 1.10.3
+    optionalDependencies:
+      postcss: 8.5.8
+
   postcss-nested@6.2.0(postcss@8.5.8):
     dependencies:
       postcss: 8.5.8
       postcss-selector-parser: 6.1.2
 
+  postcss-safe-parser@7.0.1(postcss@8.5.8):
+    dependencies:
+      postcss: 8.5.8
+
+  postcss-scss@4.0.9(postcss@8.5.8):
+    dependencies:
+      postcss: 8.5.8
+
   postcss-selector-parser@6.1.2:
+    dependencies:
+      cssesc: 3.0.0
+      util-deprecate: 1.0.2
+
+  postcss-selector-parser@7.1.1:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
@@ -9814,8 +9997,6 @@ snapshots:
 
   semver@6.3.1: {}
 
-  semver@7.7.3: {}
-
   semver@7.7.4: {}
 
   set-function-length@1.2.2:
@@ -10050,6 +10231,18 @@ snapshots:
       typescript: 5.9.2
     transitivePeerDependencies:
       - picomatch
+
+  svelte-eslint-parser@1.6.0(svelte@5.55.2):
+    dependencies:
+      eslint-scope: 8.4.0
+      eslint-visitor-keys: 4.2.1
+      espree: 10.4.0
+      postcss: 8.5.8
+      postcss-scss: 4.0.9(postcss@8.5.8)
+      postcss-selector-parser: 7.1.1
+      semver: 7.7.4
+    optionalDependencies:
+      svelte: 5.55.2
 
   svelte-toolbelt@0.10.6(svelte@5.55.2):
     dependencies:
@@ -10553,6 +10746,8 @@ snapshots:
       vscode-languageserver-types: 3.17.5
       vscode-uri: 3.1.0
       yaml: 2.7.1
+
+  yaml@1.10.3: {}
 
   yaml@2.7.1: {}
 

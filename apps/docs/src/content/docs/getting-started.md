@@ -22,6 +22,8 @@ From another package in this repo, depend on the workspace packages you need:
 }
 ```
 
+**Outside this monorepo** (or in tools like CodeSandbox), use **published** semver ranges instead (for example `"@pallette/catalog": "^0.0.1"`). The **Vite demos** in `apps/pallette-demo-*` are configured that way.
+
 For Svelte, use `@pallette/plugin-svelte` instead of (or in addition to) `@pallette/plugin-react`. You still need `@json-render/core`, your renderer package (`@json-render/react` or `@json-render/svelte`), and your component kit (e.g. `@json-render/shadcn` or `@json-render/shadcn-svelte`).
 
 ## React

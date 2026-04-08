@@ -1,0 +1,88 @@
+---
+/**
+ * Embeds a demo app folder from this monorepo on CodeSandbox (GitHub import).
+ * Defaults to the public repo pallette-dev/pallette; override with PUBLIC_DEMO_GITHUB_REPO
+ * and optionally PUBLIC_DEMO_GITHUB_BRANCH when building (e.g. for a fork).
+ */
+const DEFAULT_DEMO_GITHUB_REPO = 'pallette-dev/pallette';
+
+interface Props {
+  title: string;
+  /** Folder under apps/ without prefix, e.g. pallette-demo-react */
+  app: 'pallette-demo-react' | 'pallette-demo-svelte';
+}
+
+const { title, app } = Astro.props;
+
+const envRepo = import.meta.env.PUBLIC_DEMO_GITHUB_REPO as string | undefined;
+const repo = (envRepo?.trim() || DEFAULT_DEMO_GITHUB_REPO).trim();
+const branch = (import.meta.env.PUBLIC_DEMO_GITHUB_BRANCH as string | undefined) || 'main';
+
+let segments = repo.split('/').filter(Boolean);
+if (segments.length < 2) {
+  segments = DEFAULT_DEMO_GITHUB_REPO.split('/').filter(Boolean);
+}
+const owner = segments[0];
+const repoName = segments.slice(1).join('/');
+
+const embedSrc = `https://codesandbox.io/embed/github/${owner}/${repoName}/tree/${branch}/apps/${app}?fontsize=12&hidenavigation=1&theme=light&view=preview`;
+const openUrl = `https://codesandbox.io/s/github/${owner}/${repoName}/tree/${branch}/apps/${app}`;
+---
+
+<div class="sandbox-wrap not-content">
+  <p class="sandbox-caption">
+    <strong>{title}</strong>
+    {' · '}
+    <a href={openUrl} target="_blank" rel="noopener noreferrer">
+      Open in CodeSandbox
+    </a>
+    {' · '}
+    <a href={`https://github.com/${owner}/${repoName}/tree/${branch}/apps/${app}`} target="_blank" rel="noopener noreferrer">
+      Source on GitHub
+    </a>
+  </p>
+  <div class="sandbox-frame">
+    <iframe
+      title={title}
+      src={embedSrc}
+      loading="lazy"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    />
+  </div>
+  <p class="sandbox-hint">
+    First load can take a while while dependencies install. Demos pull <code>@pallette/*</code> from npm
+    (semver ranges); if the preview fails, run the demo locally (below) or open on CodeSandbox and check
+    the task log.
+  </p>
+</div>
+
+<style>
+  .sandbox-wrap {
+    margin: 1rem 0 1.5rem;
+  }
+  .sandbox-caption {
+    margin: 0 0 0.5rem;
+    font-size: 0.92em;
+  }
+  .sandbox-frame {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    border: 1px solid var(--sl-color-hairline, #ccc);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--sl-color-bg-nav, #f8f8f8);
+  }
+  .sandbox-frame iframe {
+    display: block;
+    width: 100%;
+    height: min(72vh, 760px);
+    border: 0;
+  }
+  .sandbox-hint {
+    margin: 0.5rem 0 0;
+    font-size: 0.85em;
+    color: var(--sl-color-gray-5, #666);
+    line-height: 1.4;
+  }
+</style>

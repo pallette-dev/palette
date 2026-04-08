@@ -3,7 +3,7 @@ title: Packages
 description: Workspace packages that make up Pallette.
 ---
 
-**Publishable on npm:** `@pallette/core`, `@pallette/catalog`, `@pallette/plugin-react`, `@pallette/plugin-svelte`, and `@pallette/plugin-vue` (scoped public). **`@pallette/eslint-config`** and **`@pallette/typescript-config`** stay **workspace-only** (not intended for npm). Demo and docs apps under `apps/*` are also private.
+**Publishable on npm:** `@pallette/core`, `@pallette/catalog`, `@pallette/plugin-react`, `@pallette/plugin-svelte`, and `@pallette/plugin-vue` (scoped public). **`@pallette/eslint-config`** and **`@pallette/typescript-config`** stay **workspace-only** (not intended for npm). The **Vite demos** depend on **`@pallette/*` via semver** (not `workspace:*`) so installs work in sandboxes and standalone checkouts; **pnpm** in this repo still links workspace copies when versions match. Apps under **`apps/*`** (including **docs** and those demos) are **private**.
 
 ## `@pallette/core`
 
