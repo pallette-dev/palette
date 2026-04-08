@@ -11,6 +11,10 @@
 
 name: Release
 
+# Use Node 24 for Actions’ internal Node (checkout, pnpm/setup, etc.); see GitHub’s Node 20 deprecation.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   push:
     branches:
@@ -36,12 +40,13 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9
+          # No `version` here — read pnpm from packageManager (avoids clashing with packageManager: pnpm@9.0.0).
+          package_json_file: package.json
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: pnpm
           registry-url: https://registry.npmjs.org
 
