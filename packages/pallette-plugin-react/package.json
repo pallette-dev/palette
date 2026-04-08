@@ -1,6 +1,6 @@
 {
   "name": "@pallette/plugin-react",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "author": "Eugene Michasiw",
   "publishConfig": {
